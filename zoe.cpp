@@ -1,26 +1,17 @@
 #include <ncurses.h>
+#include <stdlib.h>
+#include <string.h>
 
-int main()
+int main(int argc, char *argv[])
 {
-	int ch;
-	initscr();
-	raw();
-	noecho();
-	keypad(stdscr, TRUE);
-	printw("Please type");
-	attron(A_BOLD);
-	while (TRUE)
+	int ch, prev, row, col;
+	prev = EOF;
+	FILE *fp;
+	int y, x;
+	if (argc != 2)
 	{
-		ch = getch();
-		if (ch == KEY_F(1))
-		{
-			printw("Break");
-			break;
-		}
-		printw("%c", ch);
-		mvaddch(5,5,','|A_UNDERLINE);
-		refresh();
+		
 	}
-	attroff(A_BOLD);
-	endwin();
+	
+	return 0;
 }
